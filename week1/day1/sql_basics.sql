@@ -48,20 +48,20 @@ FROM sales
 GROUP BY customer_name;
 
 -- Total revenue of a specific customer
-SELECT customer_name, SUM(amount)
+SELECT customer_name, SUM(amount) AS total_revenue
 FROM sales
 WHERE customer_name = 'Anna'
 GROUP BY customer_name;
 
 -- Customer with highest revenue
-SELECT customer_name, SUM(amount)
+SELECT customer_name, SUM(amount) AS highest_revenue
 FROM sales
 GROUP BY customer_name
 ORDER BY SUM(amount) DESC
 LIMIT 1;
 
 -- Total sales per product
-SELECT product, COUNT(*)
+SELECT product, COUNT(*) AS total_sales
 FROM sales
 GROUP BY product;
 
